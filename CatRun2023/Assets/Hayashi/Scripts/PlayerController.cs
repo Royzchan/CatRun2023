@@ -39,11 +39,19 @@ public class PlayerController : MonoBehaviour
     //ジャンプした回数(カウント用)
     private int _jumpNum = 0;
 
+
+    //ここからアニメーション用
+
+    private Animator _playerAnim;
+    private string isCrouching = "isCrouching";
+
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         _startRunSpeed = _runSpeed;
+        _playerAnim = this.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -95,6 +103,18 @@ public class PlayerController : MonoBehaviour
                 //上に力を加える
                 rb.AddForce(new Vector3(0f, _canJumpHeight, 0f),ForceMode.Impulse);
             }
+        }
+
+        //しゃがみボタンが押されたらしゃがみに
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            _playerAnim.SetBool(isCrouching, true);
+        }
+
+        //しゃがみボタンが離されたら状態を戻す
+        if (Input.GetKeyUp(KeyCode.DownArrow))
+        {
+            _playerAnim.SetBool(isCrouching, false);
         }
     }
 
