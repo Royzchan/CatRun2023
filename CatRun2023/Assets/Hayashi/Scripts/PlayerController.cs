@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
 
     private Rigidbody rb;
+    private BoxCollider Bcollider;
 
     //プレイヤーの動き関係
     [SerializeField, Header("プレイヤーの移動速度")]
@@ -44,12 +45,15 @@ public class PlayerController : MonoBehaviour
 
     private Animator _playerAnim;
     private string isCrouching = "isCrouching";
+    private string isJump = "isJump";
+    private string onGround = "onGround";
 
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        Bcollider = GetComponent<BoxCollider>();
         _startRunSpeed = _runSpeed;
         _playerAnim = this.GetComponent<Animator>();
     }
@@ -57,12 +61,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        _playerAnim.SetBool(isJump, false);
         //現在の座標から前にレイを飛ばす飛ばす
         //今回は向いている方向の都合上、フォワードにマイナスをかける
-        Ray Forwardray = new Ray(this.transform.position - new Vector3(0f, 0.3f, 0f), -this.transform.forward);
+        Ray Forwardray = new Ray(this.transform.position - new Vector3(0f, 0.3f, 0f), this.transform.forward);
         RaycastHit hit;
-        if (Physics.Raycast(Forwardray, out hit, 1.0f))
+        if (Physics.Raycast(Forwardray,　out hit, 1.0f))
         {
             //レイの当たったオブジェクトが木だった場合
             if(hit.collider.gameObject.CompareTag("Wood"))
@@ -97,11 +101,14 @@ public class PlayerController : MonoBehaviour
                 if (_jumpNum > 0)
                 {
                     rb.velocity = Vector3.zero;
+                    _playerAnim.SetBool(isJump, true);
                 }
                 //ジャンプの回数を足して
                 _jumpNum++;
                 //上に力を加える
                 rb.AddForce(new Vector3(0f, _canJumpHeight, 0f),ForceMode.Impulse);
+                _playerAnim.SetBool(isJump, true);
+                _playerAnim.SetBool(onGround, false);
             }
         }
 
@@ -125,6 +132,8 @@ public class PlayerController : MonoBehaviour
         {
             _jumpNum = 0;
             _knockbackNow = false;
+            _playerAnim.SetBool(isJump, false);
+            _playerAnim.SetBool(onGround, true);
         }
 
         //木に触れたら

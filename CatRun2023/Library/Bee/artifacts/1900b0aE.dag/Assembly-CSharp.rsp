@@ -347,7 +347,14 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Hayashi/Scripts/CameraController.cs"
 "Assets/Hayashi/Scripts/PlayerController.cs"
+"Assets/miyahara/Script/GenerateLevels.cs"
+"Assets/miyahara/Script/GoalScript.cs"
+"Assets/miyahara/Script/Sweeper.cs"
+"Assets/naichilab/FadeManager/Sample/FadeSample.cs"
+"Assets/naichilab/FadeManager/Scripts/FadeManager.cs"
 "Assets/tamogami/mimimimi.cs"
+"Assets/Wada/Script/ChangeScene.cs"
+"Assets/Wada/Script/SteageSelect.cs"
 -langversion:9.0
 
 /deterministic

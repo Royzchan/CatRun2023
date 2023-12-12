@@ -1,0 +1,38 @@
+　使い方
+
+======ChangeScene.cs=======
+タイトル画面、ステージクリアした時に使用
+
+　1,CanvasにChangeSceneスクリプトを貼る
+  2,OnClick()にCanvasを入れてChangeSceneから使うものを探す
+  3,File > BuildSetting で移動するシーンをAdd Open Scenes
+    →Scenes In Buildでそのシーンが足されてたらおっけー
+     追加：nabichilab > FadeManager > PrefabsのFadeManagerをHierarchyに入れる
+     
+ タイトルシーン
+TitleScene
+ TitleLoad()
+
+　次のシーン
+NextScene
+ SceneLoad()
+
+ //プログラム内
+ selectsteageScene
+ Start部分に直接記入
+ ステージ選択のシーンを入力
+
+ SteageSelectButton
+ ステージ選択のボタン→あとで表示非表示するため(修正するかも)
+
+ SceneTime
+ シーン切り替える時に暗くなる秒数、デフォは1秒
+
+ RetryLoad()
+ シーン読み込み直し
+
+
+ ======SteageSelect.cs=======
+ ステージ選択シーンのみ使用
+ とりあえず３ステージ分
+ ステージ追加するなら修正
