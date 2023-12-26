@@ -588,7 +588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TitleScene: 
-  NextScene: SteageScene1
+  NextScene: GameScene
   selectsteageScene: 
   SteageSelectButton: {fileID: 649154086}
   SceneTime: 1

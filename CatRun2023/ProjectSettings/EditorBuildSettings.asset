@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Wada/Scenes/SelectSteage.unity
     guid: fff94a2dc7995c5459c35091799454de
   - enabled: 1
-    path: Assets/Wada/Scenes/SteageScene1.unity
+    path: Assets/Wada/Scenes/ResultScene.unity
     guid: f7603788c99935546a0dd76d3aa57131
   - enabled: 1
     path: Assets/Wada/Scenes/SteageScene2.unity
@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Wada/Scenes/SteageScene3.unity
     guid: da114377bd0c01f41845829247db5a93
+  - enabled: 1
+    path: Assets/Scenes/GameScene.unity
+    guid: 3e85e815a7162d94c9f2920876dd77d4
   - enabled: 1
     path: Assets/Wada/Scenes/TitleScene.unity
     guid: 55717525f0f25444eaf07ccf4f393cee

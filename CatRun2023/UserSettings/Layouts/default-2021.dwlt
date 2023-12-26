@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: Project
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 875, y: 350}
+  m_MinSize: {x: 875, y: 371}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 40
+  controlID: 13861
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 41
+  controlID: 13867
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,14 +166,14 @@ MonoBehaviour:
     y: 0
     width: 725.6
     height: 370.4
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
   - {fileID: 14}
   m_Selected: 0
-  m_LastSelected: 0
+  m_LastSelected: 1
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -271,8 +271,8 @@ MonoBehaviour:
     y: 0
     width: 344
     height: 722.8
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -630,9 +630,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -36.06, y: 0.5400001, z: 0}
+    m_Target: {x: 18.976812, y: 0.45091867, z: 1.2795067}
     speed: 2
-    m_Value: {x: -36.06, y: 0.5400001, z: 0}
+    m_Value: {x: 18.976812, y: 0.45091867, z: 1.2795067}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -679,13 +679,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.1524003, y: 0.0074116266, z: -0.0011458319, w: 0.988295}
+    m_Target: {x: 0.14052522, y: -0.010395572, z: 0.0014755416, w: 0.9900186}
     speed: 2
-    m_Value: {x: 0.15239961, y: 0.007411593, z: -0.0011458267, w: 0.98829055}
+    m_Value: {x: -0.14052522, y: 0.010395572, z: -0.0014755417, w: -0.9900186}
   m_Size:
-    m_Target: 1.1763558
+    m_Target: 6.260833
     speed: 2
-    m_Value: 1.1763558
+    m_Value: 6.260833
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -760,14 +760,14 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 0.70413774
+    - e00: 0.61426854
       e01: 0
       e02: 0
-      e03: -175.44
+      e03: -142.49104
       e10: 0
-      e11: 0.70413774
+      e11: 0.61426854
       e12: 0
-      e13: 73.18371
+      e13: 88.17125
       e20: 0
       e21: 0
       e22: 1
@@ -824,9 +824,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: a4580000
+      m_SelectedIDs: 02590000085900000659000000590000fe580000b0580000a0580000ae580000e0580000de580000
       m_LastClickedID: 0
-      m_ExpandedIDs: 4ed2ffffd2d9ffffacdeffff0aeeffff36fbffff
+      m_ExpandedIDs: e44affff364bffff6c4effff4c52ffffe253ffff7658ffffc858ffff1a59ffffbe5fffff0a60ffff8060ffff5c61ffffa861fffff862ffff3066ffff8266ffffd466ffff2667ffff4e68ffffa068fffff268ffff4469ffff9669ffffe869ffff3a6affff8c6affff4c6bffff9e6bfffff06bffff426cffff946cffffe66cffff386dffff8a6dffffdc6dffff2e6effff806effffde6effff306fffff826fffffd46fffff2670ffff7870ffffca70ffff4a71ffff9c71ffff3072ffffe0abffff1aadffff6eaefffff0afffffa2d5ffff14d6ffff66d6ffffb8d6ffff1ed7ffffe2f2ffff3ef5ffffa6f5ffff36fbffffbc7c0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -892,22 +892,30 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Animations
+    - Assets/EffectTexturesAndPrefabs
+    - Assets/Hayashi
+    - Assets/Images
+    - Assets/Models
+    - Assets/naichilab
+    - Assets/Scenes
+    - Assets/Scripts
+    - Assets/Textures
+    - Assets/Wada
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 0
   m_StartGridSize: 64
-  m_LastFolders:
-  - Assets
+  m_LastFolders: []
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\G2241\Documents\GitHub\CatRun2023\CatRun2023
+  m_LastProjectPath: "C:\\Users\\riki3\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\GitHub\\CatRun2023\\CatRun2023"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 0e5b0000
     m_LastClickedID: 23310
-    m_ExpandedIDs: 00000000a4580000a6580000a8580000aa580000ac580000ae580000b0580000b2580000b4580000b6580000b8580000ba580000bc580000be580000c0580000
+    m_ExpandedIDs: ffffffff0000000096580000985800009c5800009e580000a0580000a4580000a6580000aa580000ac580000ae580000b0580000005900000259000008590000905a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -935,21 +943,21 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000a4580000aa580000ac580000ae580000b0580000b6580000b8580000ba580000bc580000c05800002459000072630000
+    m_ExpandedIDs: ffffffff0000000096580000985800009c5800009e580000a4580000a6580000aa580000ac580000905a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: ChangeScene
+      m_OriginalName: ChangeScene
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 5838
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_SearchString: 

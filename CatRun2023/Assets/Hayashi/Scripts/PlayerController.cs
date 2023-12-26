@@ -7,7 +7,9 @@ public class PlayerController : MonoBehaviour
 {
 
     private Rigidbody rb;
-    private BoxCollider Bcollider;
+
+    [SerializeField,Header("ゲームマネージャー")]
+    private GameManager gameManager;
 
     //プレイヤーの動き関係
     [SerializeField, Header("プレイヤーの移動速度")]
@@ -40,6 +42,9 @@ public class PlayerController : MonoBehaviour
     //ジャンプした回数(カウント用)
     private int _jumpNum = 0;
 
+    //現在走っているかどうか
+    private bool _runningNow = false;
+
 
     //ここからアニメーション用
 
@@ -50,10 +55,22 @@ public class PlayerController : MonoBehaviour
 
 
     // Start is called before the first frame update
+
+    //リスを走り始めさせる関数
+    public void RunStart()
+    {
+        _runningNow = true;
+    }
+
+    //リスを止める
+    public void RunStop()
+    {
+        _runningNow = false;
+    }
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        Bcollider = GetComponent<BoxCollider>();
         _startRunSpeed = _runSpeed;
         _playerAnim = this.GetComponent<Animator>();
     }
@@ -61,6 +78,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //走り始めるデバック
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            RunStart();
+        }
+
         _playerAnim.SetBool(isJump, false);
         //現在の座標から前にレイを飛ばす飛ばす
         //今回は向いている方向の都合上、フォワードにマイナスをかける
@@ -81,15 +104,21 @@ public class PlayerController : MonoBehaviour
             _canKnockback = false;
         }
 
-
-        //Debug.DrawRay(Forwardray.origin, Forwardray.direction , Color.red, 0.5f);
-        //ノックバック中じゃなかった場合
-        if (!_knockbackNow)
+        //走っている判定がtrueだった場合は走る
+        if(_runningNow)
         {
-            //移動速度を走っているスピードにする
-            rb.velocity = new Vector3(_runSpeed, rb.velocity.y, 0f);
+            //ノックバック中じゃなかった場合
+            if (!_knockbackNow)
+            {
+                //移動速度を走っているスピードにする
+                rb.velocity = new Vector3(_runSpeed, rb.velocity.y, 0f);
+            }
         }
-
+        //それ以外は止まる
+        else
+        {
+            rb.velocity = Vector3.zero;
+        }
 
         //ジャンプのボタンが押されたら
         if (Input.GetKeyDown(KeyCode.Space))
@@ -101,7 +130,6 @@ public class PlayerController : MonoBehaviour
                 if (_jumpNum > 0)
                 {
                     rb.velocity = Vector3.zero;
-                    _playerAnim.SetBool(isJump, true);
                 }
                 //ジャンプの回数を足して
                 _jumpNum++;
@@ -122,6 +150,15 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.DownArrow))
         {
             _playerAnim.SetBool(isCrouching, false);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Goal"))
+        {
+            gameManager.gameClear();
+            RunStop();
         }
     }
 
